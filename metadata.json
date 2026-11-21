@@ -1,0 +1,6 @@
+{
+  "name": "Recall Box",
+  "description": "Local-first Markdown notes, highlights, cloze flashcards, FSRS spaced repetition, and learning diary with compatible SQLite storage and Android Kotlin source.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

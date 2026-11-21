@@ -1,0 +1,18 @@
+{
+  "name": "Recall Box",
+  "short_name": "Recall Box",
+  "description": "Local-first Markdown notes, highlights, FSRS flashcards and learning diary with SQLite compatibility.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f4ef",
+  "theme_color": "#30352a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

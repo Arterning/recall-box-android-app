@@ -1,0 +1,202 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  html {
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: "Plus Jakarta Sans", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+
+  body {
+    @apply bg-[#f4f4ef] text-[#262920] antialiased dark:bg-[#171a16] dark:text-[#e2e5dc];
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.markdown-preview h1,
+.markdown-preview h2,
+.markdown-preview h3,
+.markdown-preview h4 {
+  margin: 1.35em 0 0.5em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.32;
+  color: #262920;
+}
+
+.dark .markdown-preview h1,
+.dark .markdown-preview h2,
+.dark .markdown-preview h3,
+.dark .markdown-preview h4 {
+  color: #e4e7de;
+}
+
+.markdown-preview h1 { font-size: 1.55rem; margin-top: 0.25em; }
+.markdown-preview h2 { font-size: 1.3rem; }
+.markdown-preview h3 { font-size: 1.12rem; }
+
+.markdown-preview p,
+.markdown-preview ul,
+.markdown-preview ol,
+.markdown-preview blockquote,
+.markdown-preview pre,
+.markdown-preview table {
+  margin: 0.85em 0;
+}
+
+.markdown-preview ul { list-style: disc; padding-left: 1.4rem; }
+.markdown-preview ol { list-style: decimal; padding-left: 1.4rem; }
+.markdown-preview li { padding-left: 0.2rem; margin: 0.25em 0; }
+.markdown-preview a { color: #5b724b; text-decoration: underline; text-underline-offset: 3px; }
+.dark .markdown-preview a { color: #a3be8e; }
+
+.markdown-preview blockquote {
+  border-left: 2px solid #cbd3c2;
+  padding-left: 1rem;
+  color: #6b7063;
+}
+.dark .markdown-preview blockquote {
+  border-left-color: #46503e;
+  color: #9ea494;
+}
+
+.markdown-preview :not(pre) > code {
+  border-radius: 0.35rem;
+  background: #eceee7;
+  padding: 0.14em 0.38em;
+  font-size: 0.88em;
+}
+.dark .markdown-preview :not(pre) > code {
+  background: #2a2f26;
+}
+
+.markdown-preview pre {
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  background: #eff1ea;
+  padding: 0.9rem 1.05rem;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+.dark .markdown-preview pre {
+  background: #21251e;
+}
+
+.markdown-preview table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.86rem;
+}
+.markdown-preview th,
+.markdown-preview td {
+  border: 1px solid #e2e4dc;
+  padding: 0.5rem 0.7rem;
+  text-align: left;
+}
+.dark .markdown-preview th,
+.dark .markdown-preview td {
+  border-color: #353a30;
+}
+.markdown-preview th {
+  background: #f6f7f3;
+  font-weight: 600;
+}
+.dark .markdown-preview th {
+  background: #232720;
+}
+.markdown-preview img {
+  max-width: 100%;
+  border-radius: 0.75rem;
+  margin: 0.75rem 0;
+}
+.markdown-preview hr {
+  margin: 1.4rem 0;
+  border-color: #e4e6de;
+}
+.dark .markdown-preview hr {
+  border-color: #353a30;
+}
+
+.markdown-preview .card-mark {
+  border-radius: 0.16rem;
+  background: transparent;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #8ea57b;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.markdown-preview .annotation-mark {
+  border-radius: 0.16rem;
+  background: #f6ecc6;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: #bfa554;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.dark .markdown-preview .annotation-mark {
+  background: #4d4528;
+  text-decoration-color: #c7b063;
+}
+
+.markdown-preview .annotation-clickable {
+  cursor: pointer;
+}
+
+.markdown-preview .annotation-hidden {
+  color: transparent !important;
+  background: #d8e2d0;
+  text-decoration-color: transparent;
+  text-shadow: none;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+.dark .markdown-preview .annotation-hidden {
+  background: #3d4836;
+}
+.markdown-preview .annotation-hidden:hover,
+.markdown-preview .annotation-hidden:active {
+  color: inherit !important;
+  background: #f6ecc6;
+  text-decoration-color: #bfa554;
+}
+.dark .markdown-preview .annotation-hidden:hover,
+.dark .markdown-preview .annotation-hidden:active {
+  background: #4d4528;
+}
+
+.review-confetti {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.review-confetti span {
+  position: absolute;
+  top: -12px;
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: review-confetti-fall 2.6s ease-out forwards;
+}
+@keyframes review-confetti-fall {
+  0% { transform: translateY(-12px) rotate(0deg); opacity: 0; }
+  12% { opacity: 1; }
+  100% { transform: translateY(360px) rotate(720deg); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .review-confetti span { animation-duration: 0.01ms; }
+}
